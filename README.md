@@ -25,7 +25,7 @@ To build and run this tool, you'll need the Go toolchain installed.
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/mikothedog/gollama.git](https://github.com/mikothedog/gollama.git)
+    git clone https://github.com/mikothedog/gollama.git
     cd gollama
     ```
 
