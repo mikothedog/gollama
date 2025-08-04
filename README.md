@@ -9,7 +9,7 @@ A simple command-line interface (CLI) tool written in Go for interacting with a 
 * **Easy Interaction**: Send a prompt to your local Ollama server directly from the command line.
 * **Streamed Responses**: The tool handles the streaming API from Ollama, providing real-time output as it's generated.
 * **Automatic Ollama Management**: Automatically starts the Ollama server if it's not running and attempts to stop it when the command is finished.
-* **Default Model**: Uses the `gemma:2b` model by default, but this can be easily modified in the source code.
+* **Default Model**: Uses the `qwen:8b` model by default, but this can be easily modified in the source code.
 
 ---
 
@@ -25,7 +25,7 @@ To build and run this tool, you'll need the Go toolchain installed.
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/your-username/gollama.git](https://github.com/your-username/gollama.git)
+    git clone [https://github.com/mikothedog/gollama.git](https://github.com/mikothedog/gollama.git)
     cd gollama
     ```
 
