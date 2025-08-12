@@ -50,38 +50,6 @@ The response will be streamed directly to your terminal.
 
 ---
 
-## Code Overview
-
-The core logic is found within the `cmd/` directory, following the standard Go CLI application structure using the `cobra` library.
-
-### `main.go`
-
-This file initializes and executes the root command.
-
-### `cmd/root.go`
-
-* **`rootCmd`**: The main command for the application. It takes the user's input from the command line and passes it to the `runApp` function.
-
-* **`runApp(prompt []string)`**: The main function that orchestrates the entire process. It performs the following steps:
-    1.  Checks if a prompt was provided.
-    2.  Creates an HTTP request body for the Ollama API, setting the default model and enabling streaming.
-    3.  Attempts to start the Ollama server.
-    4.  Sends the HTTP request to the Ollama API.
-    5.  Handles the streamed response by decoding JSON chunks and printing the output to the console.
-    6.  Attempts to stop the Ollama server after the response is complete.
-
-### Key Functions
-
-* `startOllama()`: Starts the `ollama serve` command in a separate process.
-* `stopOllama()`: Sends a `killall` command to stop the Ollama process.
-* `createHttpRequest()`: Constructs the HTTP `POST` request with the correct headers and URL.
-* `sendHttpRequest()`: Executes the HTTP request and returns the response.
-* `checkResponse()`: Verifies that the HTTP response status code is `200 OK`.
-* `printResponse()`: Decodes the streamed JSON response from the server and prints the generated text to standard output.
-* `NewGenerateRequest()`: A constructor for the `GenerateRequest` struct, which formats the user's prompt for the Ollama API.
-
----
-
 ## Customization
 
 You can easily change the default model by modifying the `DEFAULT_MODEL` constant in the `cmd/root.go` file. For example, to use `llama3:8b`:
